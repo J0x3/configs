@@ -1,0 +1,5 @@
+﻿#!/usr/bin/bash
+##monokai rofi
+##2 colors, 2nd input color-normal and last input color-normal
+
+rofi -show run -color-window "argb:6b272822, argb:a93f3f3f, argb:9b777777" -color-normal "argb:ba3a3936, #dd0d41, argb:ba3f3f3f, argb:bf4d4d4d, #a6e22e" -color-active "argb:bc3a3936, #268bd2, argb:b93a3936, argb:b4fd971f, #0e0e0e" -color-urgent "#3a3936, #dc322f, #3a3936, #dc322f, #111111" -opacity 80 -font "hack 28" -lines 3 -padding 25 -separator-style none -hide-scrollbar
