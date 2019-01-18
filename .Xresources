@@ -1,54 +1,127 @@
-! special colors
-*.foreground:  #dddddd
-*.background:  #000000
-*.cursorColor:  #a5FF00
+! -----------------------------------
+! Includes for easier (Instant) rice!
+! -----------------------------------
+!#include ".cache/mycolors/x_colors"
 
-! black
-*.color0:      #272822
-*.color8:      #75715e
+*background: [90]#222222
+*foreground: #d0d0d0
+*cursorColor: #d0d0d0
+*color0: #101010
+*color1: #960050
+*color2: #66aa11
+*color3: #c47f2c
+*color4: #30309b
+*color5: #7e40a5
+*color6: #3579a8
+*color7: #9999aa
+*color8: #303030
+*color9: #ff0090
+*color10: #80ff00
+*color11: #ffba68
+*color12: #5f5fee
+*color13: #bb88dd
+*color14: #4eb4fa
+*color15: #d0d0d0
 
-! red
-*.color1:      #dd0d41
-!*.color9:      #dd0d41
-*.color9:      #f92672
+! Background: black, dark grey
+#define _background #272822
+#define _color8 #303030
 
-! green
-*.color10:      #a6e22e
-*.color2:      #0ddd30
-!*.color10:     #0ddd30
+! Color1/foreground: light grey: standard files, cursor
+! Color9: bright pink: soft link e.g. ln -s test1 imaginarytest
+#define _foreground #FFFFFF
+#define _color9 #ff71ce
 
-! yellow
-*.color11:      #f4bf75
-!*.color3:      #ffff00
-*.color3:     #f4ef75
+! Color2: dark green: world read/write dir e.g. /tmp
+! Color10: bright green: binaries user can execute /bin
+#define _color2 #66AA11
+#define _color10 #05ffa1
 
-! blue
-*.color4:      #4265f4
-*.color12:     #4265f4
+! Color3: medium brown: fifo e.g mkfifo fifotest
+! Color11: light brown/sand: block special files e.g ls -l /dev/loop0
+#define _color3 #fffb96
+#define _color11 #fffb96
 
-! magenta
-*.color5:      #ae81ff
-*.color13:     #ae81ff
+!Color4: medium blue: FIXME: unused?
+! Color12: light blue: directory
+#define _color4 #01cdfe
+#define _color12 #01cdfe
 
-! cyan
-*.color6:      #00e5f9
-*.color14:     #00e5f9
+! Color5: dark purple: Not used in ls, in ranger (not sure where it gets it colors from though)
+! Color13: light purple: socket file /var/run/dbus_system_bus_socket
+!#define _color5 #7e40a5
+#define _color13 #b967ff
 
-! white
-*.color7:      #f8f8f2
-*.color15:     #f9f8f5
+! Color6: medium magenta: FIXME: unused?
+! Color14: light magenta: symbolic links e.g. ~/Examples /bin/lsmod
+#define _color6 #3579A8
+#define _color14 #4eb4fa
 
-URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
+! Color7: medium grey: setuid file e.g. /usr/bin/sudo
+! Color15: light grey: background color for setuid files e.g /usr/bin/sudo
+#define _color7 #9999AA
+! Trying white in case it helps
+!#define _color15 #ffffff
+#define _color15 #d0d0d0
 
-URxvt*transparent:       false
+! General - covering all X clients
+!*background: _background
+!*foreground: _foreground
+! Not sure what this one does - Solarise had it at base3
+!*fadeColor: XXX ! Not sure what this does
 
+! XTerm specific
+!xterm*background: _background
+!xterm*foreground: _foreground
+
+! Not really required - XTerm defaults to using the foreground colour
+!*cursorColor: _foreground
+
+!*color0: _background
+!*color1: _foreground
+!*color2: _color2
+!*color3: _color3
+!*color4: _color4
+!*color5: _color5
+!*color6: _color6
+!*color7: _color7
+! 8-15 are considered brighter colours of 1-7
+!*color8: _color8
+!*color9: _color9
+!*color10: _color10
+!*color11: _color11
+!*color12: _color12
+!*color13: _color13
+!*color14: _color14
+!*color15: _color15
+
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.rgba: rgb
+Xft.dpi: 96
+
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
+URxvt.scrollBar: false
 URxvt*depth: 32
-URxvt.background: [70]#000000
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+URxvt*borderless: false
+!URxvt.letterSpace: -1
 
-!URxvt.font: xft:terminus:pixelsize=22:hinting=true
-URxvt.font: xft:Hack:pixelsize=17
-URxvt.letterSpace: -1
+!*.background: [70]#000000
 
-*antialias:  true
-*autohint:   false
+!URxvt.font: xft:WenQuanYi Zen Hei Italic 10:pixelsize=19
+URxvt.font: xft:AR PL UKai CN:pixelsize=23
+!URxvt.font: xft:Fira code:pixelsize=18
+!URxvt.font: xft:fira sans:pizelsize=17
+
+rofi.color-enabled: true
+rofi.color-window: #353535, _color9, #353535 
+rofi.color-normal: #353535, #EEFFFF, #353535, #4a4a4a, _color10
